@@ -13,9 +13,6 @@ export const authOptions = {
                 })
                     .then(response => response.json())
                     .catch(error => console.error("Error", error));
-
-                console.log("user", user)
-
                 if (user.token) {
                     return user;
                 } else {

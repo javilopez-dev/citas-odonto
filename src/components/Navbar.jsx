@@ -17,7 +17,7 @@ const menuOptions = [
   { text: "Agendar citas", href: "/citas" },
 ];
 
-export default function Navbar() {
+export const Navbar = () => {
   const router = useRouter();
 
   return (
