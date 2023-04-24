@@ -46,9 +46,9 @@ export const Alert = ({ open, onHandlerClose, data = {} }) => {
                                     </button>
                                 </div>
                                 <div className="sm:flex sm:items-start">
-                                    <div className={`mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${code == '03' ? "bg-blue-100" : "bg-red-100"} sm:mx-0 sm:h-10 sm:w-10`}>
+                                    <div className={`mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${tipo == 'success' ? "bg-blue-100" : "bg-red-100"} sm:mx-0 sm:h-10 sm:w-10`}>
                                         {
-                                            code == "03" ?
+                                            tipo == 'success' ?
                                                 <BellAlertIcon
                                                     className="h-6 w-6 text-blue-600"
                                                     aria-hidden="true"

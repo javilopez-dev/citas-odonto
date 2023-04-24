@@ -1,5 +1,4 @@
 export const getPacientes = async (urlApi) => {
-    console.log(urlApi)
     const request = await fetch(`${urlApi}/get-pacientes`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },

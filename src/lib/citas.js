@@ -6,16 +6,16 @@ export const getCitas = async (urlApi) => {
         .then((response) => response.json())
         .catch((error) => console.error("Error", error));
 
-    const citas = request.map(cita => {
-        let date = new Date(cita.fecha_nacimiento)
-        return ({ ...cita, fecha_nacimiento: date.toISOString().substring(0, 10) })
-    })
+    // const citas = request.map(cita => {
+    //     let date = new Date(cita.fecha_nacimiento)
+    //     return ({ ...cita, fecha_nacimiento: date.toISOString().substring(0, 10) })
+    // })
 
-    return citas;
+    return request;
 }
 
-export const putCita = async (data, urlApi) => {
-    const request = await fetch(`${urlApi}/put-cita`, {
+export const putCita = async (data, urlApi, id_cita) => {
+    const request = await fetch(`${urlApi}/put-cita/${id_cita}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
