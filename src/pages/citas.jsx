@@ -100,7 +100,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
               icon="PlusCircleIcon"
               leadingIcon
             >
-              Agregar paciente
+              Agregar cita
             </Button>
           </PageTitle>
         </div>
@@ -276,76 +276,78 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
           </Dialog>
         </Transition.Root>
       </div>
-      <div className="mt-8 flow-root">
-        <div className="container mx-auto">
-          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-              <table className="min-w-full divide-y divide-gray-300">
-                <thead>
-                  <tr>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Fecha
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Paciente
-                    </th>
-                    <th
-                      scope="col"
-                      className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
-                    >
-                      Profesional
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Eps
-                    </th>
-                    <th
-                      scope="col"
-                      className="relative py-3.5 pl-3 pr-4 sm:pr-0"
-                    >
-                      <span className="sr-only">Edit</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {citas.map((cita) => (
-                    <tr key={cita._id}>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {`${cita.fecha.slice(0, 10)} - ${cita.fecha.slice(11, 19)}`}
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {`${cita.id_paciente.id} - ${cita.id_paciente.primer_nombre} ${cita.id_paciente.primer_apellido}`}
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {`${cita.id_profesional.id} - ${cita.id_profesional.primer_nombre} ${cita.id_profesional.primer_apellido}`}
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {cita.eps}
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {cita.telefono}
-                      </td>
-                      <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                        <button
-                          onClick={() => handleEditCita(cita)}
-                          className="text-indigo-600 hover:text-indigo-900"
-                        >
-                          {" "}
-                          Edit
-                        </button>
-                      </td>
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="mt-8 flow-root">
+          <div className="container mx-auto">
+            <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                <table className="min-w-full divide-y divide-gray-300">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                      >
+                        Fecha
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                      >
+                        Paciente
+                      </th>
+                      <th
+                        scope="col"
+                        className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                      >
+                        Profesional
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                      >
+                        Eps
+                      </th>
+                      <th
+                        scope="col"
+                        className="relative py-3.5 pl-3 pr-4 sm:pr-0"
+                      >
+                        <span className="sr-only">Edit</span>
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {citas.map((cita) => (
+                      <tr key={cita._id}>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {`${cita.fecha.slice(0, 10)} - ${cita.fecha.slice(11, 19)}`}
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {`${cita.id_paciente.id} - ${cita.id_paciente.primer_nombre} ${cita.id_paciente.primer_apellido}`}
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {`${cita.id_profesional.id} - ${cita.id_profesional.primer_nombre} ${cita.id_profesional.primer_apellido}`}
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {cita.eps}
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {cita.telefono}
+                        </td>
+                        <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                          <button
+                            onClick={() => handleEditCita(cita)}
+                            className="text-indigo-600 hover:text-indigo-900"
+                          >
+                            {" "}
+                            Edit
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
