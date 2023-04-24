@@ -8,10 +8,10 @@ export const getProfesionales = async (urlApi) => {
         .then((response) => response.json())
         .catch((error) => console.error("Error", error));
 
-    const profesionales = request.map(profesional => {
+    const profesionales = request.length ? request.map(profesional => {
         let date = new Date(profesional.fecha_nacimiento)
         return ({ ...profesional, fecha_nacimiento: date.toISOString().substring(0, 10), descripProfesion: getDescripProf(profesional.profesion) })
-    })
+    }) : []
 
     return profesionales;
 }

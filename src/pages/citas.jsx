@@ -39,7 +39,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
       eps: cita.eps,
       fecha: cita.fecha
     }
-    
+
     console.log("handleEditCita", formatCita)
     setEdit(true);
     setCurrentCita(formatCita)
@@ -100,7 +100,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
               icon="PlusCircleIcon"
               leadingIcon
             >
-              Agregar cita
+              Agregar paciente
             </Button>
           </PageTitle>
         </div>
@@ -130,7 +130,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                   leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                   leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 >
-                  <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6">
+                  <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all  w-full  sm:my-8 sm:w-full sm:max-w-2xl sm:p-6">
                     <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
                       <button
                         type="button"
@@ -142,7 +142,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                       </button>
                     </div>
                     <Formik
-                      initialValues={edit ? currentCita : initialValues}
+                      initialValues={edit ? currentPatient : initialValues}
                       validationSchema={validationSchema}
                       enableReinitialize
                       onSubmit={onSubmit}
@@ -156,7 +156,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                                 aria-hidden="true"
                               />
                             </div>
-                            <div className="mt-3 w-full text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <div className="mt-3 w-full sm:ml-4 sm:mt-0 sm:text-left">
                               <div className="">
                                 <div className="space-y-12">
                                   <div className="border-b border-gray-900/10 pb-12">
@@ -166,9 +166,8 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                                     <p className="mt-1 text-sm leading-6 text-gray-600">
                                       {metadata.descript}
                                     </p>
-                                    <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8">
-
-                                      <div className="sm:col-span-3">
+                                    <div className="mt-10 xs:flex grid grid-cols-6 gap-x-6 gap-y-8">
+                                      <div className="col-span-6 sm:col-span-3">
                                         <label
                                           htmlFor="sexo"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -185,7 +184,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                                         </div>
                                       </div>
 
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6 sm:col-span-3">
                                         <label
                                           htmlFor="sexo"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -202,7 +201,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                                         </div>
                                       </div>
 
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6 sm:col-span-3">
                                         <label
                                           htmlFor="last-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -224,7 +223,7 @@ const Citas = ({ urlApi, dataCitas, pacientes, profesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6 sm:col-span-3">
                                         <label
                                           htmlFor="last-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -359,7 +358,7 @@ export const getServerSideProps = async ({ req, query }) => {
   const urlApi = process.env.BASE_URL_API;
   const initialDataCitas = await getCitas(urlApi) || [];
 
-  const dataCitas = initialDataCitas.map(cita => ({ ...cita, fecha: cita.fecha.slice(0, 16),}))
+  const dataCitas = initialDataCitas.map(cita => ({ ...cita, fecha: cita.fecha.slice(0, 16), }))
 
   const initialDataPacientes = await getPacientes(urlApi) || [];
 

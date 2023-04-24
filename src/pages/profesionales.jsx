@@ -159,7 +159,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                 aria-hidden="true"
                               />
                             </div>
-                            <div className="mt-3 w-full text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <div className="mt-3 w-full sm:ml-4 sm:mt-0 sm:text-left">
                               <div className="">
                                 <div className="space-y-12">
                                   <div className="border-b border-gray-900/10 pb-12">
@@ -170,7 +170,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                       {metadata.descript}
                                     </p>
                                     <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8">
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="country"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -184,7 +184,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           ></Select>
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="first-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -204,7 +204,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="first-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -226,7 +226,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="first-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -248,7 +248,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="last-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -270,7 +270,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="last-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -292,7 +292,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="last-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -313,7 +313,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           />
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="sexo"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -327,7 +327,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           ></Select>
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="country"
                                           className="block text-sm font-medium leading-6 text-gray-900"
@@ -341,7 +341,7 @@ const Pacientes = ({ urlApi, dataProfesionales }) => {
                                           ></Select>
                                         </div>
                                       </div>
-                                      <div className="sm:col-span-3">
+                                      <div className="col-span-6  sm:col-span-3">
                                         <label
                                           htmlFor="first-name"
                                           className="block text-sm font-medium leading-6 text-gray-900"

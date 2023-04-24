@@ -5,11 +5,11 @@ export const getPacientes = async (urlApi) => {
     })
         .then((response) => response.json())
         .catch((error) => console.error("Error", error));
-
-    const pacientes = request.map(paciente => {
+    
+    const pacientes = request.length ? request.map(paciente => {
         let date = new Date(paciente.fecha_nacimiento)
         return ({ ...paciente, fecha_nacimiento: date.toISOString().substring(0, 10) })
-    })
+    }) : []
 
     return pacientes;
 }

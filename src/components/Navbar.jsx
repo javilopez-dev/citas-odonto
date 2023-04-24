@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { signOut } from "next-auth/react";
 import { Disclosure, Menu, Transition, Popover } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
@@ -50,9 +50,6 @@ export const Navbar = () => {
                         legacyBehavior
                       >
                         <a
-                          // className={
-                          //   "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                          // }
                           className={classNames(
                             router.pathname == option.href
                               ? "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
@@ -64,25 +61,6 @@ export const Navbar = () => {
                       </Link>
                     ))}
                   </div>
-                  {/* <a
-                      href="/pacientes"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                      Pacientes
-                    </a>
-                    <a
-                      href="/profesionales"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                      Profesionales
-                    </a>
-                    <a
-                      href="/citas"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                      Agendar citas
-                    </a> */}
-                  {/* <ItemNavbar opciones={opcionesCitas}>Citas</ItemNavbar> */}
                 </div>
               </div>
               <div className="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
@@ -201,35 +179,22 @@ export const Navbar = () => {
 
           <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-              >
-                Dashboard
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Pacientes
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Profesionales
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Citas
-              </Disclosure.Button>
+              {menuOptions.map((option) => (
+                <Disclosure.Button
+                  as="a"
+                  href={option.href}
+                  key={option.href}
+                  className={
+                    classNames(
+                      router.pathname == option.href
+                        ? "block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                        : "block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    )
+                  }
+                >
+                  {option.text}
+                </Disclosure.Button>
+              ))}
             </div>
             <div className="border-t border-gray-700 pb-3 pt-4">
               <div className="flex items-center px-5">
@@ -273,8 +238,9 @@ export const Navbar = () => {
                 </Disclosure.Button>
                 <Disclosure.Button
                   as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                  onClick={signOut}
+
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white hover:cursor-pointer"
                 >
                   Sign out
                 </Disclosure.Button>
